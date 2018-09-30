@@ -1,0 +1,18 @@
+{
+    "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+    "linterOptions": {
+      "exclude": [
+        "config/**/*.js",
+        "node_modules/**/*.ts"
+      ]
+    },
+    "rules": {
+      "max-classes-per-file": false,
+      "variable-name": false,
+      "jsx-no-lambda": false,
+      "no-console": false,
+      "ordered-imports": false,
+      "object-literal-sort-keys": false
+    }
+  }
+  
