@@ -94,7 +94,7 @@ class VendasView extends React.Component<{}, {}> {
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/geladeira-eletrolux-frost-free-536773453",
             price: 400,
             sold: false
-        }//,
+        }
         // {
         //     img: "",
         //     title: "",
