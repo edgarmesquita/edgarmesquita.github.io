@@ -2,18 +2,20 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import createHashHistory from 'history/createHashHistory';
 
 const doc = window.document;
-const baseUrl: string | undefined = doc ? doc.getElementsByTagName('base')[0].getAttribute('href') || undefined : undefined;
+// const baseUrl: string | undefined = doc ? doc.getElementsByTagName('base')[0].getAttribute('href') || undefined : undefined;
 const rootElement = doc ? doc.getElementById('root') : null;
+const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
 
 ReactDOM.render(
-  <BrowserRouter basename={baseUrl}>
+  <Router history={hashHistory}>
     <App />
-  </BrowserRouter>,
+  </Router>,
   rootElement);
 
 registerServiceWorker();
