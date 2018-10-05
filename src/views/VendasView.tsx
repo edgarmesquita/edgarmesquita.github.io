@@ -59,14 +59,42 @@ class VendasView extends React.Component<{}, {}> {
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/panela-eletrica-de-arroz-534220754",
             price: 60,
             sold: false
-        }
-        // {
-        //     img: "",
-        //     title: "",
-        //     link: "",
-        //     price: 0,
-        //     sold: false
-        // },
+        },
+        {
+            img: "https://img.olx.com.br/images/09/091805094329801.jpg",
+            title: "Freezer Flex Brastemp Frost Free Inox",
+            link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/freezer-flex-brastemp-frost-free-inox-536770986",
+            price: 1600,
+            sold: false
+        },
+        {
+            img: "https://img.olx.com.br/images/09/095805094302585.jpg",
+            title: "Armário de Aço Preto TokStok",
+            link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/moveis/armario-de-aco-preto-tokstok-536769233",
+            price: 500,
+            sold: false
+        },
+        {
+            img: "https://img.olx.com.br/images/09/099805099858934.jpg",
+            title: "Lavadora e Secadora Samsung Eco Bubble",
+            link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/lavadora-e-secadora-samsung-eco-bubble-536768576",
+            price: 2200,
+            sold: false
+        },
+        {
+            img: "https://img.olx.com.br/images/09/090805092891492.jpg",
+            title: "Fogão Eletrolux 4 bocas",
+            link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/fogao-eletrolux-4-bocas-536767569",
+            price: 500,
+            sold: false
+        },
+        {
+            img: "https://img.olx.com.br/images/09/093805090379317.jpg",
+            title: "Geladeira Eletrolux Frost Free",
+            link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/geladeira-eletrolux-frost-free-536773453",
+            price: 400,
+            sold: false
+        }//,
         // {
         //     img: "",
         //     title: "",
