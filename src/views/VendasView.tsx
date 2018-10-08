@@ -58,7 +58,7 @@ class VendasView extends React.Component<{}, {}> {
             title: "Panela Elétrica de Arroz",
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/panela-eletrica-de-arroz-534220754",
             price: 60,
-            sold: false
+            sold: true
         },
         {
             img: "https://img.olx.com.br/images/09/091805094329801.jpg",
@@ -92,7 +92,7 @@ class VendasView extends React.Component<{}, {}> {
             img: "https://img.olx.com.br/images/09/093805090379317.jpg",
             title: "Geladeira Eletrolux Frost Free",
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/geladeira-eletrolux-frost-free-536773453",
-            price: 400,
+            price: 450,
             sold: false
         }
         // {
