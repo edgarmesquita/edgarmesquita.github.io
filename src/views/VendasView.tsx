@@ -150,7 +150,7 @@ class VendasView extends React.Component<{}, {}> {
                                                 <img className="card-img-top" src={item.img} alt={item.title} />
                                                 <div className="card-body">
                                                     <p className="card-text">{item.title}</p>
-                                                    {item.description != "" && <p className="card-text">{item.description}</p>}
+                                                    {item.description !== "" && <p className="card-text">{item.description}</p>}
                                                     <div className="d-flex justify-content-between align-items-center">
                                                         <div className="btn-group">
                                                             <a href={item.link} className={`btn btn-sm btn-outline-secondary${item.sold ? " disabled": ""}`} {...props}>
