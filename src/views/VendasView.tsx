@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { connect } from '../store';
 import { Header } from '../components/Header';
+import { Card, CardBody, CardImg, CardText, CardColumns } from 'reactstrap';
+
 class VendasView extends React.Component<{}, {}> {
 
     public items: any[] = [
@@ -139,33 +141,31 @@ class VendasView extends React.Component<{}, {}> {
                     <div className="album py-5 bg-light">
                         <div className="container">
 
-                            <div className="row">
+                            <CardColumns>
                                 {this.items.map((item, idx) => {
                                     const props: any = {};
                                     if(item.sold) {props.disabled = true;}
                                     return (
-                                        <div className="col-md-4" key={idx}>
-                                            <div className="card mb-4 shadow-sm card-product">
-                                                {item.sold && <img src="/img/vendido-300x189.png" className="sold" />}
-                                                <img className="card-img-top" src={item.img} alt={item.title} />
-                                                <div className="card-body">
-                                                    <p className="card-text">{item.title}</p>
-                                                    {item.description !== "" && <p className="card-text">{item.description}</p>}
-                                                    <div className="d-flex justify-content-between align-items-center">
-                                                        <div className="btn-group">
-                                                            <a href={item.link} className={`btn btn-sm btn-outline-secondary${item.sold ? " disabled": ""}`} {...props}>
-                                                                <img src="https://static.bn-static.com/img-48782/favicon.ico"
-                                                                    style={{"width": "16px", "verticalAlign": "middle"}} /> Visualizar
-                                                            </a>
-                                                        </div>
-                                                        <small className="text-muted">R$ {item.price.toFixed(2).replace(".",",")}</small>
+                                        <Card className="mb-4 shadow-sm card-product" key={idx}>
+                                            {item.sold && <img src="/img/vendido-300x189.png" className="sold" />}
+                                            <CardImg top={true} src={item.img} alt={item.title} />
+                                            <CardBody>
+                                                <CardText>{item.title}</CardText>
+                                                {item.description !== "" && <p className="card-text">{item.description}</p>}
+                                                <div className="d-flex justify-content-between align-items-center">
+                                                    <div className="btn-group">
+                                                        <a href={item.link} className={`btn btn-sm btn-outline-secondary${item.sold ? " disabled": ""}`} {...props}>
+                                                            <img src="https://static.bn-static.com/img-48782/favicon.ico"
+                                                                style={{"width": "16px", "verticalAlign": "middle"}} /> Visualizar
+                                                        </a>
                                                     </div>
+                                                    <small className="text-muted">R$ {item.price.toFixed(2).replace(".",",")}</small>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </CardBody>
+                                        </Card>
                                     )
                                 })}
-                            </div>
+                            </CardColumns>
                         </div>
                     </div>
                 </main>
