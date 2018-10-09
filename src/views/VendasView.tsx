@@ -1,15 +1,18 @@
 import * as React from 'react';
 import { connect } from '../store';
 import { Header } from '../components/Header';
-import { Card, CardBody, CardImg, CardText, CardColumns } from 'reactstrap';
+import { Card, CardBody, CardImg, CardText, CardColumns, CardTitle, Input, FormGroup, Form, Label } from 'reactstrap';
 
-class VendasView extends React.Component<{}, {}> {
+export interface IVendasViewState {
+    order: string;
+}
+class VendasView extends React.Component<{}, IVendasViewState> {
 
     public items: any[] = [
         {
             img: "https://img.olx.com.br/images/02/024828087014448.jpg",
             title: "Cama Box de Casal King Size com colchão em molas ensacadas e cabeceira de madeira maciça",
-            description: "",
+            description: "8 anos de uso. Na loja, o colchão custou 2.224,40 reais (tenho a nota)",
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/moveis/cama-box-de-casal-king-size-com-colchao-em-molas-ensacadas-e-cabeceira-de-madeira-macica-534241654",
             price: 1200,
             sold: false
@@ -128,10 +131,33 @@ class VendasView extends React.Component<{}, {}> {
     ];
     constructor(props: any) {
         super(props);
+
+        this.handleOrderChange = this.handleOrderChange.bind(this);
+        this.compare = this.compare.bind(this);
+
+        this.state = {
+            order: "asc"
+        };
     }
 
-    public render()
-    {
+    public handleOrderChange(e: any) {
+        this.setState({
+            order: e.currentTarget.value
+        });
+    }
+
+    public compare(a: any, b: any) {
+        if (a.price < b.price) {
+            return this.state.order === "asc" ? -1 : 1;
+        }
+        if (a.price > b.price) {
+            return this.state.order === "asc" ? 1 : -1;
+        }
+        return 0;
+    }
+    public render() {
+
+        const items = this.items.sort(this.compare);
         return (
             <React.Fragment>
                 <Header />
@@ -140,26 +166,34 @@ class VendasView extends React.Component<{}, {}> {
 
                     <div className="album py-5 bg-light">
                         <div className="container">
-
+                            <Form>
+                                <FormGroup>
+                                    <Label for="order">Ordenar por:</Label>
+                                    <Input type="select" name="order" id="order" onChange={this.handleOrderChange}>
+                                        <option value="asc">Menor preço</option>
+                                        <option value="desc">Maior preço</option>
+                                    </Input>
+                                </FormGroup>
+                            </Form>
                             <CardColumns>
-                                {this.items.map((item, idx) => {
+                                {items.map((item, idx) => {
                                     const props: any = {};
-                                    if(item.sold) {props.disabled = true;}
+                                    if (item.sold) { props.disabled = true; }
                                     return (
                                         <Card className="mb-4 shadow-sm card-product" key={idx}>
                                             {item.sold && <img src="/img/vendido-300x189.png" className="sold" />}
                                             <CardImg top={true} src={item.img} alt={item.title} />
                                             <CardBody>
-                                                <CardText>{item.title}</CardText>
-                                                {item.description !== "" && <p className="card-text">{item.description}</p>}
+                                                <CardTitle>{item.title}</CardTitle>
+                                                {item.description !== "" && <CardText>{item.description}</CardText>}
                                                 <div className="d-flex justify-content-between align-items-center">
                                                     <div className="btn-group">
-                                                        <a href={item.link} className={`btn btn-sm btn-outline-secondary${item.sold ? " disabled": ""}`} {...props}>
+                                                        <a href={item.link} className={`btn btn-sm btn-outline-secondary${item.sold ? " disabled" : ""}`} {...props}>
                                                             <img src="https://static.bn-static.com/img-48782/favicon.ico"
-                                                                style={{"width": "16px", "verticalAlign": "middle"}} /> Visualizar
+                                                                style={{ "width": "16px", "verticalAlign": "middle" }} /> Visualizar
                                                         </a>
                                                     </div>
-                                                    <small className="text-muted">R$ {item.price.toFixed(2).replace(".",",")}</small>
+                                                    <small className="text-muted">{item.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</small>
                                                 </div>
                                             </CardBody>
                                         </Card>
@@ -175,4 +209,4 @@ class VendasView extends React.Component<{}, {}> {
     }
 }
 
-export default connect(state => ({ token: state.context.token })) (VendasView);
+export default connect(state => ({ token: state.context.token }))(VendasView);
