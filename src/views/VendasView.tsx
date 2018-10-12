@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from '../store';
-import { Header } from '../components/Header';
+import { ShopHeader } from '../components/ShopHeader';
 import { Card, CardBody, CardImg, CardText, CardColumns, CardTitle, Input, FormGroup, Form, Label } from 'reactstrap';
 
 export interface IVendasViewState {
@@ -160,7 +160,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
         const items = this.items.sort(this.compare);
         return (
             <React.Fragment>
-                <Header />
+                <ShopHeader />
 
                 <main role="main">
 
@@ -188,10 +188,10 @@ class VendasView extends React.Component<{}, IVendasViewState> {
                                                 {item.description !== "" && <CardText>{item.description}</CardText>}
                                                 <div className="d-flex justify-content-between align-items-center">
                                                     <div className="btn-group">
-                                                        <a href={item.link} className={`btn btn-sm btn-outline-secondary${item.sold ? " disabled" : ""}`} {...props}>
+                                                        {item.link !== "" && <a href={item.link} className={`btn btn-sm btn-outline-secondary${item.sold ? " disabled" : ""}`} {...props}>
                                                             <img src="https://static.bn-static.com/img-48782/favicon.ico"
                                                                 style={{ "width": "16px", "verticalAlign": "middle" }} /> Visualizar
-                                                        </a>
+                                                        </a>}
                                                     </div>
                                                     <small className="text-muted">{item.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</small>
                                                 </div>

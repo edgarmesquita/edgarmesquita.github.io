@@ -1,7 +1,0 @@
-.card-product {
-  position: relative; }
-  .card-product .sold {
-    position: absolute;
-    max-width: 80%;
-    top: 20%;
-    left: 10%; }

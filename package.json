@@ -3,21 +3,23 @@
     "version": "1.0.0",
     "homepage": "https://edgarmesquita.com",
     "scripts": {
-        "build-css": "node-sass-chokidar --include-path ./node_modules ./src/scss -o ./src/scss",
+        "build-css": "node-sass-chokidar --include-path ./node_modules ./src/scss ./public -o ./src/css",
         "build-js": "react-scripts-ts build",
         "build-ts": "tsc",
-        "build": "npm-run-all build-css build-js",
+        "build": "npm-run-all copy build-css build-js",
         "predeploy": "npm run build",
         "start-js": "react-scripts-ts start",
-        "start": "npm-run-all -p watch-css start-js",
+        "start": "npm-run-all -p copy watch-css start-js",
         "deploy": "gh-pages -b master -d build",
-        "watch-css": "npm run build-css && node-sass-chokidar --include-path ./node_modules ./src/scss -o ./src/scss --watch --recursive"
+        "watch-css": "npm run build-css && node-sass-chokidar --include-path ./node_modules ./src/scss ./public -o ./src/css --watch --recursive",
+        "copy": "cp -R node_modules/font-awesome/fonts ./src/"
     },
     "dependencies": {
         "bootstrap": "^4.1.3",
         "classnames": "^2.2.6",
         "enzyme": "^3.6.0",
         "enzyme-adapter-react-16": "^1.5.0",
+        "font-awesome": "^4.7.0",
         "react": "^16.5.2",
         "react-dom": "^16.5.2",
         "react-router-config": "^1.0.0-beta.4",

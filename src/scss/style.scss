@@ -1,10 +1,5 @@
-.card-product {
-    position: relative;
+@import "font-awesome/scss/font-awesome";
 
-    .sold {
-        position: absolute;
-        max-width: 80%;
-        top: 20%;
-        left: 10%;
-    }
-}
+@import "tools";
+@import "main";
+@import "shop";

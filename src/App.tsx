@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Provider } from './store';
 import HomeView from './views/HomeView';
 import VendasView from './views/VendasView';
-import './scss/style.css';
+import './css/style.css';
 export default class App extends React.Component {
     public render() {
         return (
