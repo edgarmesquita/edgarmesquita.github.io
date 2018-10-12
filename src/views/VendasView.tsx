@@ -112,7 +112,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             description: "Com apenas 1 ano de uso",
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/lavadora-e-secadora-samsung-eco-bubble-536768576",
             price: 2200,
-            sold: false
+            sold: true
         },
         {
             img: "https://img.olx.com.br/images/09/090805092891492.jpg",
