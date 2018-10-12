@@ -173,6 +173,22 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             link: "",
             price: 250,
             sold: false
+        },
+        {
+            img: "/img/vendas/bicicleta.jpeg",
+            title: "Bicicleta criança Houston",
+            description: "1 ano de uso.",
+            link: "",
+            price: 50,
+            sold: false
+        },
+        {
+            img: "/img/vendas/caloi-100.jpeg",
+            title: "Bicicleta Caloi 100 18 marchas com cesto e acento infantil",
+            description: "3 anos de uso.",
+            link: "",
+            price: 150,
+            sold: false
         }
     ];
     public animating: boolean = false;
