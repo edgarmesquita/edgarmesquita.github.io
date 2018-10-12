@@ -166,7 +166,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
         {
             img: "/img/vendas/monitor-22-1.jpeg",
             gallery: [
-                { src: "/img/vendas/monitor-22-2.jpeg", altText: "Escada", caption: "Escada" }
+                { src: "/img/vendas/monitor-22-2.jpeg", altText: "Ligado", caption: "Ligado" }
             ],
             title: "Monitor Samsung SyncMaster P2370 23 polegadas",
             description: "6 anos de uso. Excelente estado",
