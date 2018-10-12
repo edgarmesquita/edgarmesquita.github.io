@@ -149,6 +149,30 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             link: "",
             price: 80,
             sold: false
+        },
+        {
+            img: "/img/vendas/piscina-1.jpeg",
+            gallery: [
+                { src: "/img/vendas/piscina-2.jpeg", altText: "Escada", caption: "Escada" },
+                { src: "/img/vendas/piscina-3.jpeg", altText: "Bomba 1", caption: "Bomba 1" },
+                { src: "/img/vendas/piscina-4.jpeg", altText: "Bomba 2", caption: "Bomba 2" }
+            ],
+            title: "Piscina BestWay 9.600 litros",
+            description: "2 anos de uso. Está em excelente estado. Possuo escada e duas bombas.",
+            link: "",
+            price: 500,
+            sold: false
+        },
+        {
+            img: "/img/vendas/monitor-22-1.jpeg",
+            gallery: [
+                { src: "/img/vendas/monitor-22-2.jpeg", altText: "Escada", caption: "Escada" }
+            ],
+            title: "Monitor Samsung SyncMaster P2370 23 polegadas",
+            description: "6 anos de uso. Excelente estado",
+            link: "",
+            price: 250,
+            sold: false
         }
     ];
     public animating: boolean = false;
