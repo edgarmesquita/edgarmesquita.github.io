@@ -176,6 +176,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
         },
         {
             img: "/img/vendas/bicicleta.jpeg",
+            gallery: [],
             title: "Bicicleta criança Houston",
             description: "1 ano de uso.",
             link: "",
@@ -184,6 +185,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
         },
         {
             img: "/img/vendas/caloi-100.jpeg",
+            gallery: [],
             title: "Bicicleta Caloi 100 18 marchas com cesto e acento infantil",
             description: "3 anos de uso.",
             link: "",
