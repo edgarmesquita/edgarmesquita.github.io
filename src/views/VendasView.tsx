@@ -17,7 +17,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             img: "https://img.olx.com.br/images/02/024828087014448.jpg",
             gallery: [],
             title: "Cama Box de Casal King Size com colchão em molas ensacadas e cabeceira de madeira maciça",
-            description: "8 anos de uso. Na loja, o colchão custou 2.224,40 reais (tenho a nota). Estou vendendo o colçhão + box por R$ 650,00 e cabeceira por R$ 350,00.",
+            description: "8 anos de uso. Na loja, o colchão custou 2.224,40 reais (tenho a nota). Estou vendendo o colchão + box por R$ 650,00 e cabeceira por R$ 350,00.",
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/moveis/cama-box-de-casal-king-size-com-colchao-em-molas-ensacadas-e-cabeceira-de-madeira-macica-534241654",
             price: 1000,
             sold: false
@@ -145,7 +145,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             img: "/img/vendas/batedeira.jpeg",
             gallery: [],
             title: "Batedeira Planetária Arno",
-            description: "2 anos de uso. Incluído 3 patedores (raquete, globo e gancho).",
+            description: "2 anos de uso. Incluído 3 batedores (raquete, globo e gancho).",
             link: "",
             price: 80,
             sold: false
