@@ -190,7 +190,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             description: "3 anos de uso.",
             link: "",
             price: 150,
-            sold: false
+            sold: true
         }
     ];
     public animating: boolean = false;
