@@ -20,7 +20,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             description: "8 anos de uso. Na loja, o colchão custou 2.224,40 reais (tenho a nota). Estou vendendo o colchão + box por R$ 650,00 e cabeceira por R$ 350,00.",
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/moveis/cama-box-de-casal-king-size-com-colchao-em-molas-ensacadas-e-cabeceira-de-madeira-macica-534241654",
             price: 1000,
-            sold: false
+            sold: true
         },
         {
             img: "https://img.olx.com.br/images/02/028828087388361.jpg",
@@ -31,7 +31,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             description: "3 anos de uso.",
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/moveis/comoda-sapateira-de-madeira-534235872",
             price: 650,
-            sold: false
+            sold: true
         },
         {
             img: "https://img.olx.com.br/images/02/021828087906782.jpg",
@@ -58,7 +58,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             description: "2 anos de uso.",
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/ar-condicionado-samsung-24-000-btus-inverter-534215820",
             price: 2200,
-            sold: false
+            sold: true
         },
         {
             img: "https://img.olx.com.br/images/02/023828086733185.jpg",
@@ -130,7 +130,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             description: "Está em bom estado",
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/eletrodomesticos/geladeira-eletrolux-frost-free-536773453",
             price: 450,
-            sold: false
+            sold: true
         },
         {
             img: "https://img.olx.com.br/images/12/122808093425060.jpg",
@@ -148,7 +148,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             description: "2 anos de uso. Incluído 3 batedores (raquete, globo e gancho).",
             link: "",
             price: 80,
-            sold: false
+            sold: true
         },
         {
             img: "/img/vendas/piscina-1.jpeg",
