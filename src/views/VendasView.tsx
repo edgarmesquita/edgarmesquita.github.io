@@ -103,7 +103,7 @@ class VendasView extends React.Component<{}, IVendasViewState> {
             description: "Está em ótimo estado",
             link: "https://rj.olx.com.br/rio-de-janeiro-e-regiao/moveis/armario-de-aco-preto-tokstok-536769233",
             price: 500,
-            sold: false
+            sold: true
         },
         {
             img: "https://img.olx.com.br/images/09/099805099858934.jpg",
