@@ -21,7 +21,7 @@ export class Header extends React.Component {
                         </div>
                         <div className="col-sm-12 col-md-3 profile-action-container">
                             <a className="profile-action-button btn" target="_blank" rel="noopener noreferrer"
-                                href="https://api.whatsapp.com/send?phone=5521996688953"><i className="fa fa-paper-plane" /> Contact Me</a>
+                                href="https://api.whatsapp.com/send?phone=351918399798"><i className="fa fa-paper-plane" /> Contact Me</a>
                         </div>
                     </div>
                 </div>

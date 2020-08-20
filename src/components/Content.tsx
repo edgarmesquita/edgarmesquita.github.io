@@ -15,19 +15,94 @@ export interface IContent {
 }
 export interface IJob {
     title: string;
-    text: any;
+    text?: JSX.Element | string;
     company: string;
-    year: string;
+    startYear: number;
+    endYear?: number | null;
 }
 export class Content extends React.Component {
     public content: IContent = {
         "en": {
             jobs: [
                 {
+                    title: "Senior BackEnd Developer",
+                    company: "🇵🇹 Anova",
+                    startYear: 2020
+                },
+                {
+                    title: "Senior Software Engineer",
+                    company: "🇵🇹 Farfetch",
+                    startYear: 2018,
+                    endYear: 2020,
+                    text: <React.Fragment>
+                        Maintenance and creation of new financial microservices, with development of RESTful APIs and frameworks.
+                        <br />
+                        Technologies used: C # .Net Core 2.1, SQL Server, MongoDB, Cassandra, Kafka
+                    </React.Fragment>
+                },
+                {
+                    title: "Founder",
+                    company: "🇧🇷 Plah Tecnologia",
+                    startYear: 2019
+                },
+                {
                     title: "CTO & Founder",
-                    text: "Responsible for the management, architecture and development of social networking, highly scalable and integrated with Azure/Amazon services. Total participation in all stages, including UI / UX (both web, the mobile).",
-                    company: "Plah Tecnologia",
-                    year: "2015 - Now"
+                    text: <React.Fragment>
+                        Responsible for the management, architecture and development of social networking, highly scalable and integrated with 
+                        Azure/Amazon services. Total participation in all stages, including UI / UX (both web, the mobile). 
+                        <br />
+                        Web publishing, Apple and Google Play stores.
+                        <br />
+                        Used technologies: .Net Core 2.0, ASP.Net MVC 6, Web API, Windows Web Service API SelfHost, Quartz .Net, Entity Framework
+                        Core 2.0, SQL Server 2016, React and React Native.
+                        </React.Fragment>,
+                    company: "🇧🇷 Plah Tecnologia",
+                    startYear: 2015,
+                    endYear: 2019
+                },
+                {
+                    title: "Technical Leader / Software Architect",
+                    company: "🇧🇷 DINO - Divulgador de Notícias",
+                    startYear: 2016,
+                    endYear: 2016,
+                    text: <React.Fragment>
+                        Architecture and development of platform disseminating notics;
+                        <br />
+                        Integration with payment gateway Implementation of new technologies such as .Net Core Technologies employed: C # .Net 4.6 
+                        and Core 1.0, Entity Framework 6.1, SQL Server 2014, jQuery;
+                        <br />
+                        SCRUM Methodology.
+                    </React.Fragment>
+                },
+                {
+                    title: "Senior Software Analyst",
+                    company: "🇧🇷 Modulo Security Solutions - Latin America",
+                    startYear: 2013,
+                    endYear: 2014,
+                    text: <React.Fragment>
+                        Architecture and development of systems focused on solutions for GRC (Governance, Risk and Compliance);
+                        <br />
+                        BI modules development integrated with Microsoft SharePoint and Analysis Service for national large-scale projects 
+                        (World Cup 2014).
+                        <br />
+                        Received the international award for innovation, "2014 GRC Technology Innovation Award for GRC Intelligence," 
+                        the company GRC 20/20: <a href="http://www.prweb.com/releases/2014/03/prweb11655232.htm" target="_blank">
+                            http://www.prweb.com/releases/2014/03/prweb11655232.htm
+                            </a>
+                        <br />
+                        Technologies: ASP.Net C # WebAPI / Multi Tenant Services, Entity Framework 6, MVC 5, TFS, Continuous Integration, 
+                        SCRUM methodology.
+                    </React.Fragment>
+                },
+                {
+                    title: "Senior .Net Developer",
+                    company: "🇧🇷 BSI Tecnologia",
+                    startYear: 2013,
+                    endYear: 2013,
+                    text: <React.Fragment>
+                        Maintenance and development of private and secure prior applications.<br />
+                        Technologies: ASP.Net C# 4.0, MVC 4.0, Entity Framework 5
+                    </React.Fragment>
                 }
             ]
         },
@@ -56,16 +131,19 @@ export class Content extends React.Component {
                                 </p>
                                 <ul>
                                     <li>
-                                        Languages: PHP, ASP, VB.Net, C#.Net, JavaScript, TypeScript, CSS, HTML, XHTML, XML and XSL;
+                                        Languages: PHP, ASP, VB.Net, C#.Net, JavaScript, TypeScript, NodeJS, CSS, SASS, LESS, HTML, XHTML, XML and XSL;
                                     </li>
                                     <li>
-                                        Frameworks: .Net Framework, .Net Core, MVC Razor, Entity Framework, NHibernate, Django, Smarty, Prado, Yii;
+                                        Frameworks: .Net Framework, .Net Core, MVC Razor, Entity Framework, NHibernate, jQuery, React, React Native, MSMQ, Kafka, Redis;
                                     </li>
                                     <li>
-                                        Data bases: SQL Server, MySQL, DB2 and Oracle;
+                                        Data bases: SQL Server, MySQL, DB2, Oracle, Redis, MongoDB and Cassandra;
                                     </li>
                                     <li>
                                         Other: Python, Java/J2EE.
+                                    </li>
+                                    <li>
+                                        DevOps: Azure, Amazon AWS, DigitalOcean, IBM Blue Mix, Google Cloud 
                                     </li>
                                 </ul>
                             </div>
@@ -129,19 +207,13 @@ export class Content extends React.Component {
                             </div> */}
 
                             <Work>
-                                <Job title="CTO &amp; Founder" company="Plah Tecnologia" year="2015 - Now">
-                                    Responsible for the management, architecture and development of social networking, highly scalable and integrated with Azure/Amazon services. Total participation in all stages, including UI / UX (both web, the mobile).
-                                </Job>
-                                <Job title="Technical Leader &amp; Software Architect" company="Dino - Divulgador de Notícias" year="2016">
-                                    Architecture and development of platform disseminating notics; <br />
-                                    Integration with payment gateway Implementation of new technologies such as .Net Core Technologies employed: C # .Net 4.6 and Core 1.0, Entity Framework 6.1, SQL Server 2014, jQuery;<br />
-                                    SCRUM Methodology.
-                                </Job>
-                                <Job title="Senior Software Analyst" company="Modulo Security Solutions" year="2013 - 2014">
-                                    Architecture and development of systems focused on solutions for GRC (Governance, Risk and Compliance);<br />
-                                    BI modules development integrated with Microsoft SharePoint and Analysis Service for national large-scale projects (World Cup 2014).<br />
-                                    Received the international award for innovation, "2014 GRC Technology Innovation Award for GRC Intelligence," the company GRC 20/20: <a href="http://www.prweb.com/releases/2014/03/prweb11655232.htm">http://www.prweb.com/releases/2014/03/prweb11655232.htm</a>
-                                </Job>
+                                {this.content.en.jobs.map((job: IJob, idx: number) => {
+                                    return (
+                                        <Job title={job.title} company={job.company} year={`${job.startYear} - ${job.endYear || 'Now'}`} key={idx}>
+                                            {job.text}
+                                        </Job>
+                                    )
+                                })}
                             </Work>
                         </div>
 
