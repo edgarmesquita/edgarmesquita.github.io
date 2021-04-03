@@ -206,12 +206,18 @@ const useStyles = makeStyles((theme: Theme) =>
             textAlign: 'center'
         },
         menuFooterText: {
+            display: 'inline-block',
+            overflow: 'visible',
+            color: 'rgba(255, 255, 255, .5)',
+            transition: 'padding .5s ease',
+        },
+        menuFooterTextOpen: {
+            padding: theme.spacing(4, 0, 0, 0),
+        },
+        menuFooterTextClose: {
             transform: 'rotate(-180deg)',
             writingMode: 'vertical-rl',
             whiteSpace: 'nowrap',
-            display: 'inline-block',
-            overflow: 'visible',
-            color: 'rgba(255, 255, 255, .5)'
         },
         contactContainer: {
             paddingBottom: theme.spacing(5)
@@ -304,7 +310,10 @@ export default function HomeView() {
                 </List>
 
                 <div className={classes.menuFooter}>
-                    <span className={classes.menuFooterText}>2021 &bull; Edgar Mesquita</span>
+                    <span className={clsx(classes.menuFooterText, {
+                        [classes.menuFooterTextOpen]: open,
+                        [classes.menuFooterTextClose]: !open
+                    })}>2021 &bull; Edgar Mesquita</span>
                 </div>
             </Drawer>
             <main className={classes.content}>

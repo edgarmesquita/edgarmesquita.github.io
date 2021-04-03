@@ -39,7 +39,7 @@ const EducationSection = ({ titleClassName }: IEducationSectionProps) => {
 
     return (
 
-        <Container maxWidth="md" id="experience">
+        <Container maxWidth="md" id="education">
             <Typography variant="h1" component="h2" className={titleClassName}>
                 Education
             </Typography>
