@@ -24,11 +24,11 @@ const theme = createMuiTheme({
     typography: {
         fontFamily: '"Rubik",sans-serif',
         h1: {
-            fontSize: '2.4em',
+            fontSize: '2.3em',
             fontWeight: 700,
         },
         h2: {
-            fontSize: '2.2em',
+            fontSize: '2.1em',
         },
         h3: {
             fontSize: '2em',

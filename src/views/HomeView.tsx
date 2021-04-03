@@ -20,12 +20,11 @@ import {
     IoBriefcaseOutline, IoChatbubblesOutline, IoSchoolOutline, IoDownloadOutline, IoPersonCircleOutline, IoLogoSkype,
 } from "react-icons/io5";
 
-import { DiVisualstudio, DiNodejsSmall, DiReact, DiJava, DiMsqlServer, DiPhp, DiRedis, DiScrum, DiDotnet, DiPython, DiMysql } from "react-icons/di";
+import { DiNodejsSmall, DiReact, DiJava, DiMsqlServer, DiPhp, DiRedis, DiScrum, DiDotnet, DiPython, DiMysql } from "react-icons/di";
 
 import { useInterval } from 'src/interval';
 import 'react-typist/dist/Typist.css';
-import TimelineItem, { ITimelineItem } from './TimelineItem';
-import TimelineList from './TimelineList';
+
 import ExperienceSection from './ExperienceSection';
 import EducationSection from './EducationSection';
 const drawerWidth = 240;
@@ -76,7 +75,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 duration: theme.transitions.duration.leavingScreen,
             }),
             overflowX: 'hidden',
-            width: theme.spacing(11) + 1,
+            width: theme.spacing(10) + 1,
             backgroundColor: 'transparent',
         },
         toolbar: {
@@ -124,7 +123,7 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         listItem: {
-            padding: theme.spacing(1, 3, 1, 4),
+            padding: theme.spacing(.8, 3, .8, 3.5),
             marginBottom: theme.spacing(3)
         },
         listItemIcon: {
@@ -182,8 +181,7 @@ const useStyles = makeStyles((theme: Theme) =>
             },
         },
         fab: {
-            display: 'block',
-            margin: '0 auto'
+
         },
         fabIcon: {
             marginRight: theme.spacing(1),
@@ -194,7 +192,7 @@ const useStyles = makeStyles((theme: Theme) =>
             marginRight: theme.spacing(2)
         },
         devSkill: {
-            paddingBottom: theme.spacing(3)
+            paddingBottom: theme.spacing(5)
         },
         devSkillTitle: {
             display: 'inline-block',
@@ -219,7 +217,10 @@ const useStyles = makeStyles((theme: Theme) =>
             paddingBottom: theme.spacing(5)
         },
         contactIcon: {
-            fontSize: '3rem'
+            fontSize: '2.2rem'
+        },
+        socialIcon: {
+            fontSize: '1.2rem'
         }
     }),
 );
@@ -314,7 +315,7 @@ export default function HomeView() {
                         <Typography align="center" variant="h1" gutterBottom={true}>
                             Edgar Mesquita
                         </Typography>
-                        <Typography align="center" variant="h4" gutterBottom={true}>
+                        <Typography align="center" variant="h6" gutterBottom={true}>
 
                             <Typist cursor={{ hideWhenDone: false }} key={countInterval}>
                                 <span>I'm a </span>
@@ -332,22 +333,22 @@ export default function HomeView() {
                         </Typography>
                         <Typography align="center">
                             <IconButton aria-label="facebook" href="https://www.facebook.com/edgar.rj" target="_blank">
-                                <IoLogoFacebook />
+                                <IoLogoFacebook className={classes.socialIcon} />
                             </IconButton>
                             <IconButton aria-label="instagram" href="https://www.instagram.com/edgarmesquita/" target="_blank">
-                                <IoLogoInstagram />
+                                <IoLogoInstagram className={classes.socialIcon} />
                             </IconButton>
                             <IconButton aria-label="whatsapp" href="https://api.whatsapp.com/send?phone=351918399798" target="_blank">
-                                <IoLogoWhatsapp />
+                                <IoLogoWhatsapp className={classes.socialIcon} />
                             </IconButton>
                             <IconButton aria-label="linkedin" href="https://www.linkedin.com/in/edgarmesquita/" target="_blank">
-                                <IoLogoLinkedin />
+                                <IoLogoLinkedin className={classes.socialIcon} />
                             </IconButton>
                             <IconButton aria-label="github" href="https://github.com/edgarmesquita" target="_blank">
-                                <IoLogoGithub />
+                                <IoLogoGithub className={classes.socialIcon} />
                             </IconButton>
                             <IconButton aria-label="mail" href="mailto:edgar.rj@gmail.com" target="_blank">
-                                <IoMailOpenOutline />
+                                <IoMailOpenOutline className={classes.socialIcon} />
                             </IconButton>
                         </Typography>
                     </Box>
@@ -368,10 +369,13 @@ export default function HomeView() {
                                 <Typography paragraph={true}>
                                     Experience in deploying technological innovations solutions for Insurance areas, Social Networking, Marketing, Retail and Financial Market.
                                 </Typography>
-                                <Fab variant="extended" color="secondary" aria-label="add" className={classes.fab}>
-                                    <IoDownloadOutline className={classes.fabIcon} />
-                                    Download CV
-                                </Fab>
+
+                                <Typography align="center" component="div">
+                                    <Fab variant="extended" color="secondary" aria-label="add" className={classes.fab} href="/docs/EdgarMesquita_Resume.pdf" target="_blank">
+                                        <IoDownloadOutline className={classes.fabIcon} />
+                                        Download CV
+                                    </Fab>
+                                </Typography>
                             </Box>
                         </Grid>
                     </Grid>
@@ -481,7 +485,7 @@ export default function HomeView() {
 
                 <Container maxWidth="md" id="contact" className={classes.contactContainer}>
                     <Typography variant="h1" component="h2" className={classes.title}>Get in Touch</Typography>
-                    <Typography variant="body1">You can contact me through:</Typography>
+                    <Typography variant="body1" gutterBottom={true}>You can contact me through:</Typography>
 
 
                     <Typography align="center">
