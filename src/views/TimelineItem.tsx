@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         boxSubtitle: {
             marginTop: theme.spacing(-.5),
-            paddingLeft: theme.spacing(3.8)
         },
         boxCaption: {
             color: 'rgba(255,255,255,.5)',
@@ -33,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
         timeline: {
             borderLeft: '2px solid',
             borderLeftColor: theme.palette.secondary.dark,
-            padding: theme.spacing(1, 0, 1, 4)
+            padding: theme.spacing(1, 0, 1, 3)
         },
     }),
 );

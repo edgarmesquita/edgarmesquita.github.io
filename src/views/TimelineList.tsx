@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
             position: 'relative',
             backgroundColor: boxBackgroundColor,
             borderRadius: '10px',
+            padding: theme.spacing(3, 2, 3, 4)
         },
     }),
 );
@@ -29,14 +30,14 @@ const TimelineList = ({ items }: ITimelineListProps) => {
 
         <Grid container={true} spacing={3}>
             <Grid item={true} xs={12} sm={6}>
-                <Box className={classes.box} p={4}>
+                <Box className={classes.box}>
                     {items.filter((item) => item.position === 'left').map((item: ITimelineItem) =>
                         <TimelineItem item={item} key={item.title} />
                     )}
                 </Box>
             </Grid>
             <Grid item={true} xs={12} sm={6}>
-                <Box className={classes.box} p={4}>
+                <Box className={classes.box}>
                     {items.filter((item) => item.position === 'right').map((item: ITimelineItem) =>
                         <TimelineItem item={item} key={item.title} />
                     )}
