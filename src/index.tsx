@@ -5,7 +5,7 @@ import * as ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import createHashHistory from 'history/createHashHistory';
+import { createHashHistory } from 'history';
 
 const doc = window.document;
 // const baseUrl: string | undefined = doc ? doc.getElementsByTagName('base')[0].getAttribute('href') || undefined : undefined;
