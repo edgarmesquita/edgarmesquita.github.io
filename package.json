@@ -4,7 +4,7 @@
     "homepage": "https://edgarmesquita.com",
     "scripts": {
         "build-css": "node-sass-chokidar --include-path ./node_modules ./src/scss ./public -o ./src/css",
-        "build-js": "react-scripts-ts build",
+        "build-js": "react-scripts-ts build && react-snapshot",
         "build-ts": "tsc",
         "build": "npm-run-all copy build-css build-js",
         "predeploy": "npm run build",
@@ -21,7 +21,6 @@
         "@material-ui/lab": "4.0.0-alpha.56",
         "@material-ui/pickers": "^3.2.10",
         "@reduxjs/toolkit": "^1.2.5",
-        "@types/react-scroll": "^1.8.2",
         "bootstrap": "^4.1.3",
         "classnames": "^2.2.6",
         "enzyme": "^3.6.0",
@@ -34,6 +33,7 @@
         "react-router-config": "^5.1.1",
         "react-router-dom": "^5.2.0",
         "react-scroll": "^1.8.2",
+        "react-snapshot": "^1.3.0",
         "react-tsparticles": "^1.24.2",
         "react-typist": "^2.0.5"
     },
@@ -45,6 +45,8 @@
         "@types/react-dom": "^17.0.3",
         "@types/react-router": "^5.1.13",
         "@types/react-router-dom": "^5.1.7",
+        "@types/react-scroll": "^1.8.2",
+        "@types/react-snapshot": "^1.3.0",
         "@types/react-typist": "^2.0.1",
         "babel-jest": "^23.6.0",
         "gh-pages": "^3.1.0",

@@ -6,6 +6,7 @@ import { Router } from 'react-router-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { createHashHistory } from 'history';
+import { render } from 'react-snapshot';
 import './css/main.css';
 
 const doc = window.document;
@@ -13,7 +14,7 @@ const doc = window.document;
 const rootElement = doc ? doc.getElementById('root') : null;
 const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
 
-ReactDOM.render(
+render(
   <Router history={hashHistory}>
     <App />
   </Router>,

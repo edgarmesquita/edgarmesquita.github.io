@@ -247,8 +247,6 @@ export default function HomeView() {
 
     return (
         <div className={classes.root}>
-            <CssBaseline />
-
             <Drawer
                 variant="permanent"
                 className={clsx(classes.drawer, {
@@ -368,7 +366,7 @@ export default function HomeView() {
                     <Typography variant="h1" component="h2" className={classes.title}>About Me</Typography>
                     <Grid container={true} spacing={3}>
                         <Grid item={true} xs={12} sm={4} md={3} className={classes.avatarContainer}>
-                            <Avatar alt="Edgar Mesquita" src="/img/avatar.jpg" className={classes.avatar2} />
+                            <Avatar alt="Edgar Mesquita" src="/img/edgar-working.png" className={classes.avatar2} />
                         </Grid>
                         <Grid item={true} xs={12} sm={8} md={9}>
                             <Box className={clsx(classes.baloon)} p={3}>
