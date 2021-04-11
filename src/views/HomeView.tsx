@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { useEffect } from 'react';
 import clsx from 'clsx';
 import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
 import Typist from 'react-typist';
 import { Link, animateScroll as scroll } from "react-scroll";
 
-import { Avatar, Box, Container, CssBaseline, Drawer, Fab, Grid, List, Typography } from '@material-ui/core';
+import { Avatar, Box, Container, Drawer, Fab, Grid, List, Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -21,7 +20,6 @@ import {
     IoBriefcaseOutline, IoChatbubblesOutline, IoSchoolOutline, IoDownloadOutline, IoPersonCircleOutline, IoLogoSkype,
 } from "react-icons/io5";
 
-import { DiNodejsSmall, DiReact, DiJava, DiMsqlServer, DiPhp, DiRedis, DiScrum, DiDotnet, DiPython, DiMysql } from "react-icons/di";
 import { SiNuget } from "react-icons/si";
 
 import { useInterval } from 'src/interval';
@@ -29,6 +27,7 @@ import 'react-typist/dist/Typist.css';
 
 import ExperienceSection from './ExperienceSection';
 import EducationSection from './EducationSection';
+import StackSection from './StackSection';
 
 const drawerWidth = 240;
 const boxBackgroundColor = 'rgba(0,0,0,.1)';
@@ -190,20 +189,7 @@ const useStyles = makeStyles((theme: Theme) =>
             marginRight: theme.spacing(1),
             fontSize: '1.2rem'
         },
-        devIcon: {
-            fontSize: '4rem',
-            marginRight: theme.spacing(2)
-        },
-        devSkill: {
-            paddingBottom: theme.spacing(5)
-        },
-        devSkillTitle: {
-            display: 'inline-block',
-            fontWeight: 700,
-            fontSize: '1.8rem',
-            color: 'rgb(255, 209, 92)',
-            verticalAlign: 'middle'
-        },
+
         menuFooter: {
             position: 'relative',
             textAlign: 'center'
@@ -366,9 +352,6 @@ export default function HomeView() {
                             <IconButton aria-label="instagram" href="https://www.instagram.com/edgarmesquita/" target="_blank">
                                 <IoLogoInstagram className={classes.socialIcon} />
                             </IconButton>
-                            <IconButton aria-label="whatsapp" href="https://api.whatsapp.com/send?phone=351918399798" target="_blank">
-                                <IoLogoWhatsapp className={classes.socialIcon} />
-                            </IconButton>
                             <IconButton aria-label="linkedin" href="https://www.linkedin.com/in/edgarmesquita/" target="_blank">
                                 <IoLogoLinkedin className={classes.socialIcon} />
                             </IconButton>
@@ -377,6 +360,9 @@ export default function HomeView() {
                             </IconButton>
                             <IconButton aria-label="nuget" href="https://www.nuget.org/profiles/edgarmesquita" target="_blank">
                                 <SiNuget className={classes.socialIcon} />
+                            </IconButton>
+                            <IconButton aria-label="whatsapp" href="https://api.whatsapp.com/send?phone=351918399798" target="_blank">
+                                <IoLogoWhatsapp className={classes.socialIcon} />
                             </IconButton>
                             <IconButton aria-label="mail" href="mailto:edgar.rj@gmail.com" target="_blank">
                                 <IoMailOpenOutline className={classes.socialIcon} />
@@ -409,104 +395,8 @@ export default function HomeView() {
                         </Grid>
                     </Grid>
                 </Container>
-                <Container maxWidth="md" id="stacks" className={classes.container}>
-                    <Typography variant="h1" component="h2" className={classes.title}>Stacks</Typography>
-                    <Grid container={true}>
-                        <Grid item={true} xs={4} sm={3} md={2} className={classes.devSkill}>
-                            <Typography align="center"><DiDotnet className={classes.devIcon} /></Typography>
-                            <Typography align="center">
-                                <Typography component="span" variant="caption">&gt;</Typography>
-                                <Typography component="span" className={classes.devSkillTitle}>11</Typography>
-                                <Typography component="span" variant="caption">years</Typography>
-                            </Typography>
-                            <Typography align="center">.Net and C#</Typography>
-                        </Grid>
-                        <Grid item={true} xs={4} sm={3} md={2} className={classes.devSkill}>
-                            <Typography align="center"><DiMsqlServer className={classes.devIcon} /></Typography>
-                            <Typography align="center">
-                                <Typography component="span" variant="caption">&gt;</Typography>
-                                <Typography component="span" className={classes.devSkillTitle}>12</Typography>
-                                <Typography component="span" variant="caption">years</Typography>
-                            </Typography>
-                            <Typography align="center">SQL Server</Typography>
-                        </Grid>
-                        <Grid item={true} xs={4} sm={3} md={2} className={classes.devSkill}>
-                            <Typography align="center"><DiMysql className={classes.devIcon} /></Typography>
-                            <Typography align="center">
-                                <Typography component="span" variant="caption">&gt;</Typography>
-                                <Typography component="span" className={classes.devSkillTitle}>4</Typography>
-                                <Typography component="span" variant="caption">years</Typography>
-                            </Typography>
-                            <Typography align="center">MySQL</Typography>
-                        </Grid>
-                        <Grid item={true} xs={4} sm={3} md={2} className={classes.devSkill}>
-                            <Typography align="center"><DiRedis className={classes.devIcon} /></Typography>
-                            <Typography align="center">
-                                <Typography component="span" className={classes.devSkillTitle}>5</Typography>
-                                <Typography component="span" variant="caption">years</Typography>
-                            </Typography>
-                            <Typography align="center">Redis</Typography>
-                        </Grid>
-                        <Grid item={true} xs={4} sm={3} md={2} className={classes.devSkill}>
-                            <Typography align="center"><DiReact className={classes.devIcon} /></Typography>
-                            <Typography align="center">
-                                <Typography component="span" className={classes.devSkillTitle}>3</Typography>
-                                <Typography component="span" variant="caption">years</Typography>
-                            </Typography>
-                            <Typography align="center">React</Typography>
-                        </Grid>
-                        <Grid item={true} xs={4} sm={3} md={2} className={classes.devSkill}>
-                            <Typography align="center"><DiNodejsSmall className={classes.devIcon} /></Typography>
-                            <Typography align="center">
-                                <Typography component="span" className={classes.devSkillTitle}>2</Typography>
-                                <Typography component="span" variant="caption">years</Typography>
-                            </Typography>
-                            <Typography align="center">NodeJS</Typography>
-                        </Grid>
-                        <Grid item={true} xs={4} sm={3} md={2}>
-                            <Typography align="center"><DiPhp className={classes.devIcon} /></Typography>
-                            <Typography align="center">
-                                <Typography component="span" className={classes.devSkillTitle}>5</Typography>
-                                <Typography component="span" variant="caption">years</Typography>
-                            </Typography>
-                            <Typography align="center" gutterBottom={true}>PHP OOP</Typography>
-                        </Grid>
 
-                        <Grid item={true} xs={4} sm={3} md={2}>
-                            <Typography align="center"><DiJava className={classes.devIcon} /></Typography>
-                            <Typography align="center">
-                                <Typography component="span" variant="caption">&lt;</Typography>
-                                <Typography component="span" className={classes.devSkillTitle}>2</Typography>
-                                <Typography component="span" variant="caption">years</Typography>
-                            </Typography>
-                            <Typography align="center" gutterBottom={true}>Java</Typography>
-                        </Grid>
-
-                        <Grid item={true} xs={4} sm={3} md={2}>
-                            <Typography align="center"><DiPython className={classes.devIcon} /></Typography>
-                            <Typography align="center">
-                                <Typography component="span" variant="caption">&lt;</Typography>
-                                <Typography component="span" className={classes.devSkillTitle}>1</Typography>
-                                <Typography component="span" variant="caption">years</Typography>
-                            </Typography>
-                            <Typography align="center" gutterBottom={true}>Python and Django</Typography>
-                        </Grid>
-
-                        <Grid item={true} xs={4} sm={3} md={2}>
-                            <Typography align="center"><DiScrum className={classes.devIcon} /></Typography>
-                            <Typography align="center">
-                                <Typography component="span" variant="caption">±</Typography>
-                                <Typography component="span" className={classes.devSkillTitle}>9</Typography>
-                                <Typography component="span" variant="caption">years</Typography>
-                            </Typography>
-                            <Typography align="center" gutterBottom={true}>Scrum</Typography>
-                        </Grid>
-                    </Grid>
-                    <Typography align="center" variant="h6" component="h3" className={classes.subtitle}>Other technologies</Typography>
-                    <Typography align="center" variant="caption" component="div">
-                        TypeScript &bull; CSS &bull; HTML &bull; XHTML &bull; XML &bull; XSL &bull; YAML <br />
-                        Azure &bull; AWS &bull; Digital Ocean &bull; IBM Bluemix &bull; Google Cloud</Typography>
-                </Container>
+                <StackSection className={classes.container} titleClassName={classes.title} subtitleClassName={classes.subtitle} />
 
                 <ExperienceSection className={classes.container} titleClassName={classes.title} />
 
@@ -532,6 +422,9 @@ export default function HomeView() {
                         </IconButton>
                     </Typography>
 
+                    <Typography align="center" variant="caption" component="div">
+                        +351 918 399 798 &bull; edgar.rj@gmail.com
+                    </Typography>
                 </Container>
             </main>
         </div>
