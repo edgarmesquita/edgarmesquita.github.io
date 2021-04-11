@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             display: 'flex',
+
         },
         appBar: {
             zIndex: theme.zIndex.drawer + 1,
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
             width: drawerWidth,
             flexShrink: 0,
             whiteSpace: 'nowrap',
-            backgroundColor: 'transparent',
+            backgroundColor: theme.palette.background.default,
         },
         drawerOpen: {
             width: drawerWidth,
@@ -69,7 +70,7 @@ const useStyles = makeStyles((theme: Theme) =>
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.enteringScreen,
             }),
-            backgroundColor: 'transparent',
+            backgroundColor: theme.palette.background.default,
         },
         drawerClose: {
             transition: theme.transitions.create('width', {
@@ -78,7 +79,7 @@ const useStyles = makeStyles((theme: Theme) =>
             }),
             overflowX: 'hidden',
             width: theme.spacing(10) + 1,
-            backgroundColor: 'transparent',
+            backgroundColor: theme.palette.background.default,
         },
         toolbar: {
             display: 'flex',
@@ -114,7 +115,8 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         content: {
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            width: '100%'
         },
         list: {
             marginTop: theme.spacing(2),
@@ -229,7 +231,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize: '2rem'
         },
         homeContainer: {
-            width: 'calc(100vw - 82px)',
+            width: '100%',
             height: '100vh',
             display: 'flex',
             alignItems: 'center',
