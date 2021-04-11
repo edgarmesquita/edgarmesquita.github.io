@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 export interface IExperienceSectionProps {
+    className?: string;
     titleClassName?: string;
 }
 
@@ -67,12 +68,12 @@ const experience: ITimelineItem[] = [
     }
 ];
 
-const ExperienceSection = ({ titleClassName }: IExperienceSectionProps) => {
+const ExperienceSection = ({ className, titleClassName }: IExperienceSectionProps) => {
     const classes = useStyles();
 
     return (
 
-        <Container maxWidth="md" id="experience">
+        <Container maxWidth="md" id="experience" className={className}>
             <Typography variant="h1" component="h2" className={titleClassName}>
                 Experience <Typography component="span" variant="caption">Most relevants</Typography>
             </Typography>

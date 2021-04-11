@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
-import { Box, Container, Grid, Typography } from '@material-ui/core';
-import TimelineItem, { ITimelineItem } from './TimelineItem';
+import { Container, Typography } from '@material-ui/core';
+import { ITimelineItem } from './TimelineItem';
 import TimelineList from './TimelineList';
+import { IoSchoolOutline } from 'react-icons/io5';
 
-const boxBackgroundColor = 'rgba(0,0,0,.1)';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
 
     }),
 );
 
-
 export interface IEducationSectionProps {
+    className?: string;
     titleClassName?: string;
 }
 
@@ -34,17 +34,17 @@ const education: ITimelineItem[] = [
     },
 ];
 
-const EducationSection = ({ titleClassName }: IEducationSectionProps) => {
+const EducationSection = ({ className, titleClassName }: IEducationSectionProps) => {
     const classes = useStyles();
 
     return (
 
-        <Container maxWidth="md" id="education">
+        <Container maxWidth="md" id="education" className={className}>
             <Typography variant="h1" component="h2" className={titleClassName}>
                 Education
             </Typography>
 
-            <TimelineList items={education} />
+            <TimelineList items={education} iconType={IoSchoolOutline} />
         </Container>
 
     );

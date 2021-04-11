@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import clsx from 'clsx';
 import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
 import Typist from 'react-typist';
@@ -27,6 +28,7 @@ import 'react-typist/dist/Typist.css';
 
 import ExperienceSection from './ExperienceSection';
 import EducationSection from './EducationSection';
+
 const drawerWidth = 240;
 const boxBackgroundColor = 'rgba(0,0,0,.1)';
 const useStyles = makeStyles((theme: Theme) =>
@@ -111,10 +113,8 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: theme.spacing(0, 2),
         },
         content: {
-            flexGrow: 1,
-            "& #tsparticles": {
-                opacity: .1
-            }
+            display: 'flex',
+            flexDirection: 'column'
         },
         list: {
             marginTop: theme.spacing(2),
@@ -226,7 +226,23 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize: '2.2rem'
         },
         socialIcon: {
-            fontSize: '1.2rem'
+            fontSize: '2rem'
+        },
+        homeContainer: {
+            height: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'url(/img/bg.png) repeat'
+        },
+        homeBox: {
+            margin: 'auto',
+        },
+        homeIcons: {
+            paddingTop: theme.spacing(4)
+        },
+        container: {
+            flexGrow: 0
         }
     }),
 );
@@ -244,6 +260,7 @@ export default function HomeView() {
     useInterval(() => {
         setCount(countInterval + 1);
     }, 20000);
+
 
     return (
         <div className={classes.root}>
@@ -316,8 +333,8 @@ export default function HomeView() {
             </Drawer>
             <main className={classes.content}>
 
-                <Container maxWidth="md" id="home">
-                    <Box py={8}>
+                <Container maxWidth="md" id="home" className={clsx(classes.container, classes.homeContainer)}>
+                    <Box className={classes.homeBox}>
                         <Avatar alt="Edgar Mesquita" src="/img/avatar.jpg" className={classes.avatar} />
                         <Typography align="center" variant="h1" gutterBottom={true}>
                             Edgar Mesquita
@@ -338,7 +355,7 @@ export default function HomeView() {
                             </Typist>
 
                         </Typography>
-                        <Typography align="center">
+                        <Typography align="center" className={classes.homeIcons}>
                             <IconButton aria-label="facebook" href="https://www.facebook.com/edgar.rj" target="_blank">
                                 <IoLogoFacebook className={classes.socialIcon} />
                             </IconButton>
@@ -360,9 +377,7 @@ export default function HomeView() {
                         </Typography>
                     </Box>
                 </Container>
-                <Container maxWidth="md" id="about">
-
-
+                <Container maxWidth="md" id="about" className={classes.container}>
                     <Typography variant="h1" component="h2" className={classes.title}>About Me</Typography>
                     <Grid container={true} spacing={3}>
                         <Grid item={true} xs={12} sm={4} md={3} className={classes.avatarContainer}>
@@ -387,7 +402,7 @@ export default function HomeView() {
                         </Grid>
                     </Grid>
                 </Container>
-                <Container maxWidth="md" id="stacks">
+                <Container maxWidth="md" id="stacks" className={classes.container}>
                     <Typography variant="h1" component="h2" className={classes.title}>Stacks</Typography>
                     <Grid container={true}>
                         <Grid item={true} xs={4} sm={3} md={2} className={classes.devSkill}>
@@ -486,11 +501,11 @@ export default function HomeView() {
                         Azure &bull; AWS &bull; Digital Ocean &bull; IBM Bluemix &bull; Google Cloud</Typography>
                 </Container>
 
-                <ExperienceSection titleClassName={classes.title} />
+                <ExperienceSection className={classes.container} titleClassName={classes.title} />
 
-                <EducationSection titleClassName={classes.title} />
+                <EducationSection className={classes.container} titleClassName={classes.title} />
 
-                <Container maxWidth="md" id="contact" className={classes.contactContainer}>
+                <Container maxWidth="md" id="contact" className={clsx(classes.container, classes.contactContainer)}>
                     <Typography variant="h1" component="h2" className={classes.title}>Get in Touch</Typography>
                     <Typography variant="body1" gutterBottom={true}>You can contact me through:</Typography>
 

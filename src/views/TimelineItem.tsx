@@ -5,6 +5,7 @@ import { Box, Typography } from '@material-ui/core';
 import {
     IoBriefcaseOutline
 } from "react-icons/io5";
+import { IconType } from 'react-icons';
 
 const boxBackgroundColor = 'rgba(0,0,0,.1)';
 const useStyles = makeStyles((theme: Theme) =>
@@ -53,15 +54,16 @@ export interface ITimelineItem {
 }
 
 export interface ITimelineItemProps {
-    item: ITimelineItem
+    item: ITimelineItem,
+    iconType?: IconType
 }
-const TimelineItem = ({ item }: ITimelineItemProps) => {
+const TimelineItem = ({ item, iconType }: ITimelineItemProps) => {
     const classes = useStyles();
-
+    const Icon = iconType || IoBriefcaseOutline;
     return (
 
         <div className={classes.timeline}>
-            <IoBriefcaseOutline className={classes.boxIcon} />
+            <Icon className={classes.boxIcon} />
             <Typography variant="caption" component="div" className={classes.boxCaption}>
                 {item.startDate} - {item.endDate || 'Present'}
             </Typography>
