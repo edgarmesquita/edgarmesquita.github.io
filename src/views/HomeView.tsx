@@ -229,6 +229,7 @@ const useStyles = makeStyles((theme: Theme) =>
             fontSize: '2rem'
         },
         homeContainer: {
+            width: 'calc(100vw - 82px)',
             height: '100vh',
             display: 'flex',
             alignItems: 'center',
@@ -333,7 +334,7 @@ export default function HomeView() {
             </Drawer>
             <main className={classes.content}>
 
-                <Container maxWidth="md" id="home" className={clsx(classes.container, classes.homeContainer)}>
+                <div id="home" className={clsx(classes.container, classes.homeContainer)}>
                     <Box className={classes.homeBox}>
                         <Avatar alt="Edgar Mesquita" src="/img/avatar.jpg" className={classes.avatar} />
                         <Typography align="center" variant="h1" gutterBottom={true}>
@@ -376,7 +377,7 @@ export default function HomeView() {
                             </IconButton>
                         </Typography>
                     </Box>
-                </Container>
+                </div>
                 <Container maxWidth="md" id="about" className={classes.container}>
                     <Typography variant="h1" component="h2" className={classes.title}>About Me</Typography>
                     <Grid container={true} spacing={3}>
