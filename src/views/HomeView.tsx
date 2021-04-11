@@ -22,6 +22,7 @@ import {
 } from "react-icons/io5";
 
 import { DiNodejsSmall, DiReact, DiJava, DiMsqlServer, DiPhp, DiRedis, DiScrum, DiDotnet, DiPython, DiMysql } from "react-icons/di";
+import { SiNuget } from "react-icons/si";
 
 import { useInterval } from 'src/interval';
 import 'react-typist/dist/Typist.css';
@@ -373,6 +374,9 @@ export default function HomeView() {
                             </IconButton>
                             <IconButton aria-label="github" href="https://github.com/edgarmesquita" target="_blank">
                                 <IoLogoGithub className={classes.socialIcon} />
+                            </IconButton>
+                            <IconButton aria-label="nuget" href="https://www.nuget.org/profiles/edgarmesquita" target="_blank">
+                                <SiNuget className={classes.socialIcon} />
                             </IconButton>
                             <IconButton aria-label="mail" href="mailto:edgar.rj@gmail.com" target="_blank">
                                 <IoMailOpenOutline className={classes.socialIcon} />
