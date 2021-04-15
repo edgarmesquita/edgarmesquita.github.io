@@ -411,7 +411,7 @@ export default function HomeView() {
                         <IconButton aria-label="whatsapp" href="https://api.whatsapp.com/send?phone=351918399798" target="_blank">
                             <IoLogoWhatsapp className={classes.contactIcon} />
                         </IconButton>
-                        <IconButton aria-label="skype" href="skype:edgar.rj@live.com?chat" target="_blank">
+                        <IconButton aria-label="skype" href="skype:edgar-rj?chat" target="_blank">
                             <IoLogoSkype className={classes.contactIcon} />
                         </IconButton>
                         <IconButton aria-label="linkedin" href="https://www.linkedin.com/in/edgarmesquita/" target="_blank">
