@@ -4,7 +4,7 @@ import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/sty
 import Typist from 'react-typist';
 import { Link, animateScroll as scroll } from "react-scroll";
 
-import { Avatar, Box, Container, Drawer, Fab, Grid, List, Typography } from '@material-ui/core';
+import { Avatar, Box, Container, Drawer, Fab, Grid, LinearProgress, List, Typography, withStyles } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -220,6 +220,7 @@ const useStyles = makeStyles((theme: Theme) =>
         homeContainer: {
             width: '100%',
             height: '100vh',
+            maxHeight: '1000px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -233,9 +234,32 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         container: {
             flexGrow: 0
-        }
+        },
+        box: {
+            position: 'relative',
+            backgroundColor: boxBackgroundColor,
+            borderRadius: '10px',
+            padding: theme.spacing(3, 2, 3, 4)
+        },
     }),
 );
+
+const BorderLinearProgress = withStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            height: 10,
+            borderRadius: 5,
+        },
+        colorPrimary: {
+            backgroundColor: 'rgba(0,0,0,.3)',
+        },
+        bar: {
+            borderRadius: 5,
+            backgroundColor: 'rgb(255, 209, 92)',
+        },
+
+    }),
+)(LinearProgress);
 
 export default function HomeView() {
     const classes = useStyles();
@@ -402,6 +426,24 @@ export default function HomeView() {
 
                 <EducationSection className={classes.container} titleClassName={classes.title} />
 
+                <Container maxWidth="md" id="languages" className={classes.container}>
+                    <Typography variant="h1" component="h2" className={classes.title}>Languages</Typography>
+
+                    <Box className={classes.box}>
+                        <Grid container={true} spacing={3}>
+                            <Grid item={true} xs={12} sm={6}>
+                                <Typography variant="body1" gutterBottom={true}>Portuguese</Typography>
+                                <BorderLinearProgress variant="determinate" value={100} />
+                                <Typography variant="caption" gutterBottom={true}>Native</Typography>
+                            </Grid>
+                            <Grid item={true} xs={12} sm={6}>
+                                <Typography variant="body1" gutterBottom={true}>English</Typography>
+                                <BorderLinearProgress variant="determinate" value={40} />
+                                <Typography variant="caption" gutterBottom={true}>Intermediate (B1)</Typography>
+                            </Grid>
+                        </Grid>
+                    </Box>
+                </Container>
                 <Container maxWidth="md" id="contact" className={clsx(classes.container, classes.contactContainer)}>
                     <Typography variant="h1" component="h2" className={classes.title}>Get in Touch</Typography>
                     <Typography variant="body1" gutterBottom={true}>You can contact me through:</Typography>
