@@ -29,15 +29,19 @@ const theme = createMuiTheme({
         },
         h2: {
             fontSize: '2.1em',
+            fontWeight: 700,
         },
         h3: {
             fontSize: '2em',
+            fontWeight: 700,
         },
         h4: {
             fontSize: '1.8em',
+            fontWeight: 700,
         },
         h5: {
             fontSize: '1.6em',
+            fontWeight: 700,
         },
         h6: {
             fontSize: '1.4em',

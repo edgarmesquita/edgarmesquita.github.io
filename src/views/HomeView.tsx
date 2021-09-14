@@ -28,6 +28,7 @@ import 'react-typist/dist/Typist.css';
 import ExperienceSection from './ExperienceSection';
 import EducationSection from './EducationSection';
 import StackSection from './StackSection';
+import ProjectSection from './ProjectSection';
 
 const drawerWidth = 240;
 const boxBackgroundColor = 'rgba(0,0,0,.1)';
@@ -423,6 +424,8 @@ export default function HomeView() {
                 <StackSection className={classes.container} titleClassName={classes.title} subtitleClassName={classes.subtitle} />
 
                 <ExperienceSection className={classes.container} titleClassName={classes.title} />
+
+                <ProjectSection className={classes.container} titleClassName={classes.title} />
 
                 <EducationSection className={classes.container} titleClassName={classes.title} />
 
