@@ -411,7 +411,9 @@ export default function HomeView() {
                                 </Typography>
 
                                 <Typography align="center" component="div">
-                                    <Fab variant="extended" color="secondary" aria-label="add" className={classes.fab} href="/downloads/EdgarMesquita_Resume.pdf" target="_blank">
+                                    <Fab variant="extended" color="secondary" aria-label="add" className={classes.fab} 
+                                        href="/downloads/EdgarMesquita_Resume.pdf" target="_blank" 
+                                        download="EdgarMesquita_Resume.pdf">
                                         <IoDownloadOutline className={classes.fabIcon} />
                                         Download CV
                                     </Fab>
