@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Container, Grid, Typography } from '@material-ui/core';
-import { DiNodejsSmall, DiReact, DiJava, DiMsqlServer, DiPhp, DiRedis, DiScrum, DiDotnet, DiPython, DiMysql } from "react-icons/di";
+import { 
+    DiCss3, DiHtml5, DiJsBadge, DiNodejsSmall, DiReact, DiJava, DiMsqlServer, 
+    DiPhp, DiRedis, DiScrum, DiDotnet, DiPython, DiMysql 
+} from "react-icons/di";
+import { BiCodeCurly } from "react-icons/bi";
 import { IconType } from 'react-icons';
 
 const boxBackgroundColor = 'rgba(0,0,0,.1)';
@@ -38,14 +42,18 @@ export interface IStackSectionProps {
 
 const stacks: IStack[] = [
     { iconType: DiDotnet, symbol: '>', years: 12, description: '.Net and C#' },
-    { iconType: DiMsqlServer, symbol: '>', years: 14, description: 'SQL Server' },
-    { iconType: DiMysql, symbol: '>', years: 4, description: 'MySQL' },
-    { iconType: DiRedis, years: 5, description: 'Redis' },
-    { iconType: DiReact, symbol: '>', years: 4, description: 'React' },
-    { iconType: DiNodejsSmall, symbol: '>', years: 3, description: 'NodeJS' },
     { iconType: DiPhp, years: 5, description: 'PHP OOP' },
     { iconType: DiJava, years: 2, description: 'Java' },
     { iconType: DiPython, symbol: '<', years: 1, description: 'Python and Django' },
+    { iconType: DiMsqlServer, symbol: '>', years: 14, description: 'SQL Server' },
+    { iconType: DiMysql, symbol: '>', years: 4, description: 'MySQL' },
+    { iconType: DiRedis, years: 5, description: 'Redis' },
+    { iconType: DiHtml5, symbol: '>', years: 17, description: 'HTML' },
+    { iconType: DiCss3, symbol: '>', years: 17, description: 'CSS' },
+    { iconType: DiJsBadge, symbol: '>', years: 14, description: 'JavaScript' },
+    { iconType: BiCodeCurly, symbol: '>', years: 4, description: 'TypeScript' },
+    { iconType: DiReact, symbol: '>', years: 4, description: 'React' },
+    { iconType: DiNodejsSmall, symbol: '>', years: 4, description: 'NodeJS' },
     { iconType: DiScrum, symbol: '±', years: 9, description: 'Scrum' },
 ];
 const StackSection = ({ className, titleClassName, subtitleClassName }: IStackSectionProps) => {
