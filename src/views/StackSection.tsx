@@ -81,8 +81,9 @@ const StackSection = ({ className, titleClassName, subtitleClassName }: IStackSe
             </Grid>
             <Typography align="center" variant="h6" component="h3" className={subtitleClassName}>Other technologies</Typography>
             <Typography align="center" variant="caption" component="div">
-                TypeScript &bull; CSS &bull; HTML &bull; XHTML &bull; XML &bull; XSL &bull; YAML <br />
-            Azure &bull; AWS &bull; Digital Ocean &bull; IBM Bluemix &bull; Google Cloud</Typography>
+                jQuery &bull; Angular &bull; XHTML &bull; XML &bull; XSL &bull; YAML <br />
+                Azure &bull; AWS &bull; Digital Ocean &bull; IBM Bluemix &bull; Google Cloud
+            </Typography>
         </Container>
     );
 }

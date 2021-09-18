@@ -404,7 +404,7 @@ export default function HomeView() {
                         <Grid item={true} xs={12} sm={8} md={9}>
                             <Box className={clsx(classes.baloon)} p={3}>
                                 <Typography paragraph={true}>
-                                    Experience of 16 years in Information Technology, with extensive experience in architecture, development and maintenance of systems using Agile and Traditional methodologies in software engineering disciplines. (Requirements, Design, Construction, Testing, Configuration, Metrics).
+                                    Experience of 17 years in Information Technology, with extensive experience in architecture, development and maintenance of systems using Agile and Traditional methodologies in software engineering disciplines. (Requirements, Design, Construction, Testing, Configuration, Metrics).
                                 </Typography>
                                 <Typography paragraph={true}>
                                     Experience in deploying technological innovations solutions for Insurance areas, Social Networking, Marketing, Retail and Financial Market.
