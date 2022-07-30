@@ -19,6 +19,12 @@ export interface IExperienceSectionProps {
 
 const experience: ITimelineItem[] = [
     {
+        title: "🇵🇹 Anova", role: "Team Leader",
+        description: "Team follow-up, technical planning, product scalability. A strong will to continuously learn, teach, improve and make others grow.",
+        startDate: "Apr 2022",
+        endDate: "Present", position: 'left'
+    },
+    {
         title: "🇵🇹 Anova", role: "Senior Backend Developer",
         description: "Development and maintenance of a cloud-native IoT platform for the global leader in remote monitoring of industrial assets: Industrial Gas, Rail, Energy, Oil and Gas, Water / Sewer and other industries.",
         startDate: "Apr 2020",

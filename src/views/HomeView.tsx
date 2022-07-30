@@ -380,10 +380,13 @@ export default function HomeView() {
                             <IconButton aria-label="linkedin" href="https://www.linkedin.com/in/edgarmesquita/" target="_blank">
                                 <IoLogoLinkedin className={classes.socialIcon} />
                             </IconButton>
-                            <IconButton aria-label="github" href="https://github.com/edgarmesquita" target="_blank">
+                            <IconButton aria-label="github" href="https://github.com/edgarmesquita" target="_blank" title="github.com/edgarmesquita">
                                 <IoLogoGithub className={classes.socialIcon} />
                             </IconButton>
-                            <IconButton aria-label="nuget" href="https://www.nuget.org/profiles/edgarmesquita" target="_blank">
+                            <IconButton aria-label="github" href="https://github.com/equantic" target="_blank" title="github.com/equantic">
+                                <IoLogoGithub className={classes.socialIcon} />
+                            </IconButton>
+                            <IconButton aria-label="nuget" href="https://www.nuget.org/profiles/edgarmesquita" target="_blank" title="nuget">
                                 <SiNuget className={classes.socialIcon} />
                             </IconButton>
                             <IconButton aria-label="whatsapp" href="https://api.whatsapp.com/send?phone=351918399798" target="_blank">
@@ -404,7 +407,7 @@ export default function HomeView() {
                         <Grid item={true} xs={12} sm={8} md={9}>
                             <Box className={clsx(classes.baloon)} p={3}>
                                 <Typography paragraph={true}>
-                                    Experience of 17 years in Information Technology, with extensive experience in architecture, development and maintenance of systems using Agile and Traditional methodologies in software engineering disciplines. (Requirements, Design, Construction, Testing, Configuration, Metrics).
+                                    Experience of 18 years in Information Technology, with extensive experience in architecture, development and maintenance of systems using Agile and Traditional methodologies in software engineering disciplines. (Requirements, Design, Construction, Testing, Configuration, Metrics).
                                 </Typography>
                                 <Typography paragraph={true}>
                                     Experience in deploying technological innovations solutions for Insurance areas, Social Networking, Marketing, Retail and Financial Market.
