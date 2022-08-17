@@ -55,19 +55,21 @@ export interface ITimelineItem {
 
 export interface ITimelineItemProps {
     item: ITimelineItem,
-    iconType?: IconType
+    iconType?: IconType,
+    continuation?: boolean
 }
-const TimelineItem = ({ item, iconType }: ITimelineItemProps) => {
+const TimelineItem = ({ item, iconType, continuation }: ITimelineItemProps) => {
     const classes = useStyles();
     const Icon = iconType || IoBriefcaseOutline;
     return (
 
         <div className={classes.timeline}>
-            <Icon className={classes.boxIcon} />
+            {!continuation && <Icon className={classes.boxIcon} />}
+            {!continuation && <Typography variant="h5" component="h3" className={classes.boxTitle}>{item.title}</Typography>}
             <Typography variant="caption" component="div" className={classes.boxCaption}>
                 {item.startDate} - {item.endDate || 'Present'}
             </Typography>
-            <Typography variant="h5" component="h3" className={classes.boxTitle}>{item.title}</Typography>
+            
             <Typography variant="h6" component="h4" className={classes.boxSubtitle} gutterBottom={true}>{item.role}</Typography>
             {item.description && (
                 <Typography variant="body2" className={classes.boxText}>

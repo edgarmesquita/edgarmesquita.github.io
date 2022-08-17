@@ -28,9 +28,12 @@ const TimelineList = ({ items, iconType }: ITimelineListProps) => {
         <Grid container={true} spacing={3}>
             <Grid item={true} xs={12} sm={6}>
                 <Box className={classes.box}>
-                    {items.filter((item) => item.position === 'left').map((item: ITimelineItem) =>
-                        <TimelineItem item={item} iconType={iconType} key={item.title} />
-                    )}
+                    {items.filter((item) => item.position === 'left').map((item: ITimelineItem, idx) => {
+                        const continuation = idx > 0 && items[idx-1].title === item.title;
+                        return (
+                            <TimelineItem item={item} iconType={iconType} continuation={continuation} key={item.title} />
+                        );
+                    })}
                 </Box>
             </Grid>
             <Grid item={true} xs={12} sm={6}>

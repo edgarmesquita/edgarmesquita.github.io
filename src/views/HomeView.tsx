@@ -29,6 +29,7 @@ import ExperienceSection from './ExperienceSection';
 import EducationSection from './EducationSection';
 import StackSection from './StackSection';
 import ProjectSection from './ProjectSection';
+import moment from 'moment';
 
 const drawerWidth = 240;
 const boxBackgroundColor = 'rgba(0,0,0,.1)';
@@ -407,7 +408,7 @@ export default function HomeView() {
                         <Grid item={true} xs={12} sm={8} md={9}>
                             <Box className={clsx(classes.baloon)} p={3}>
                                 <Typography paragraph={true}>
-                                    Experience of 18 years in Information Technology, with extensive experience in architecture, development and maintenance of systems using Agile and Traditional methodologies in software engineering disciplines. (Requirements, Design, Construction, Testing, Configuration, Metrics).
+                                    Experience of {moment().diff(new Date(2004, 7, 1), 'years')} years in Information Technology, with extensive experience in architecture, development and maintenance of systems using Agile and Traditional methodologies in software engineering disciplines. (Requirements, Design, Construction, Testing, Configuration, Metrics).
                                 </Typography>
                                 <Typography paragraph={true}>
                                     Experience in deploying technological innovations solutions for Insurance areas, Social Networking, Marketing, Retail and Financial Market.
