@@ -22,25 +22,29 @@ export interface ITimelineListProps {
 }
 const TimelineList = ({ items, iconType }: ITimelineListProps) => {
     const classes = useStyles();
-
+    const leftItems = items.filter((item) => item.position === 'left');
+    const rightItems = items.filter((item) => item.position === 'right');
     return (
 
         <Grid container={true} spacing={3}>
             <Grid item={true} xs={12} sm={6}>
                 <Box className={classes.box}>
-                    {items.filter((item) => item.position === 'left').map((item: ITimelineItem, idx) => {
-                        const continuation = idx > 0 && items[idx-1].title === item.title;
+                    {leftItems.map((item: ITimelineItem, idx) => {
+                        const continuation = idx > 0 && leftItems[idx-1].title === item.title;
                         return (
-                            <TimelineItem item={item} iconType={iconType} continuation={continuation} key={item.title} />
+                            <TimelineItem item={item} iconType={iconType} continuation={continuation} key={idx} />
                         );
                     })}
                 </Box>
             </Grid>
             <Grid item={true} xs={12} sm={6}>
                 <Box className={classes.box}>
-                    {items.filter((item) => item.position === 'right').map((item: ITimelineItem) =>
-                        <TimelineItem item={item} iconType={iconType} key={item.title} />
-                    )}
+                    {rightItems.map((item: ITimelineItem, idx) => {
+                        const continuation = idx > 0 && rightItems[idx-1].title === item.title;
+                        return (
+                            <TimelineItem item={item} iconType={iconType} continuation={continuation} key={idx} />
+                        );
+                    })}
                 </Box>
             </Grid>
         </Grid>

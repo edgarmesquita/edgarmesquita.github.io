@@ -50,9 +50,15 @@ const experience: ITimelineItem[] = [
     },
     {
         title: "🇧🇷 Qx3", role: "Specialist .Net Developer",
+        description: "Monitoring and participation in project architecture processes for Banco Itaú. Development of the IPO platform of the BTG Pactual bank.",
+        startDate: "Jan 2012",
+        endDate: "Nov 2012", position: 'left'
+    },
+    {
+        title: "🇧🇷 Qx3", role: "Senior .Net Developer",
         description: "Maintenance and development of financial systems in ASP.Net (C # MVC2 / 3) + SQL Server / Oracle, Python + Django + MySQL; Definition of the functional structure of the projects and communication with Stakeholders; SCRUM Methodology",
         startDate: "Jul 2011",
-        endDate: "Nov 2012", position: 'right'
+        endDate: "Jan 2012", position: 'left'
     },
     {
         title: "🇧🇷 BRQ", role: "Mid System Analyst and Developer",
@@ -69,8 +75,37 @@ const experience: ITimelineItem[] = [
     {
         title: "🇧🇷 Running Solutions", role: "System Analyst Developer",
         description: "Maintenance and development of corporate portals, intranet and web systems using languages such as: ASP.Net, PHP 5, ASP and database: SQL Server, Oracle, MySQL, DB2, Access",
-        startDate: "Nov 2007",
+        startDate: "Jun 2008",
         endDate: "Jun 2009", position: 'right'
+    },
+    {
+        title: "🇧🇷 Running Solutions", role: "Mid Web Designer",
+        startDate: "Nov 2007",
+        endDate: "Jun 2008", position: 'right'
+    },
+    {
+        title: "🇧🇷 Addtech", role: "Mid Web Designer",
+        description: "Creation and development of corporate portals using Lumis Portal Suite (Content Management System - CMS); Use of tools such as: Flash, Fireworks, Dreamweaver, CorelDraw, Photoshop, 3D Studio, Maya; and languages like: Action Script, Java Script, HTML, CSS, XML / XSL, PHP. I also participated in the development of multimedia material, flash systems for desktop and internal stationery (Folders, cards, labels).",
+        startDate: "Oct 2004",
+        endDate: "Jun 2006", position: 'right',
+        projects: [
+            { 
+                title: "Portal Cultura Inglesa", 
+                description: "Development of navigation structure; Implementation in the Lumis Portal Manager tool."
+            },
+            { 
+                title: "Portal Golden Cross", 
+                description: "Elaboration of banners for portal campaigns. Content implementation."
+            },
+            { 
+                title: "Portal Mongeral", 
+                description: "Implementation in the Lumis Portal Manager tool; Development of Flash presentations."
+            },
+            { 
+                title: "Intranet Unimed Rio", 
+                description: "Development of the interface, implementation in the Lumis Portal Manager tool."
+            }
+        ]
     }
 ];
 

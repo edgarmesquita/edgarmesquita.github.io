@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
-import { Box, Typography } from '@material-ui/core';
+import { Box, Card, CardContent, Typography } from '@material-ui/core';
 
 import {
     IoBriefcaseOutline
@@ -35,13 +35,28 @@ const useStyles = makeStyles((theme: Theme) =>
             borderLeftColor: theme.palette.secondary.dark,
             padding: theme.spacing(1, 0, 1, 3)
         },
+        project: {
+            marginTop: theme.spacing(2),
+            backgroundColor: theme.palette.primary.main
+        },
+        projectContent: {
+            padding: theme.spacing(1, 2),
+            paddingBottom: theme.spacing(1) + 'px !important'
+        },
+        projectTitle: {
+            fontSize: '1rem'
+        },
+        projectDescription: {
+            fontSize: '.8rem'
+        }
     }),
 );
 
 export interface IProject {
-    name: string;
     title: string;
-    date: string;
+    description: string;
+    date?: string;
+    url?: string;
 }
 export interface ITimelineItem {
     title: string;
@@ -76,6 +91,16 @@ const TimelineItem = ({ item, iconType, continuation }: ITimelineItemProps) => {
                     {item.description}
                 </Typography>
             )}
+            {item.projects?.map((project) => {
+                return (
+                    <Card key={project.title} className={classes.project}>
+                        <CardContent className={classes.projectContent}>
+                            <Typography variant="h6" component="h5" className={classes.projectTitle} gutterBottom={true}>{project.title}</Typography>
+                            <Typography variant="body2" className={classes.projectDescription}>{project.description}</Typography>
+                        </CardContent>
+                    </Card>
+                );
+            })}
         </div>
 
     );
